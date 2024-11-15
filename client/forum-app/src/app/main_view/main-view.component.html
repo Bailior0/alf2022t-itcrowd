@@ -1,0 +1,39 @@
+<div class="page">
+
+  <div class="header">
+    <img src="https://i.pravatar.cc/150?u={{(authService.user | async)?.id}}">
+    <h2>
+      {{(authService.user | async)?.username}}
+    </h2>
+  </div>
+  <div style="margin: 10px">
+      <div>
+        Post something
+      </div>
+      <app-create-post>
+
+      </app-create-post>
+  </div>
+  <div style="display: flex;flex-direction: row">
+    <div class="post-list">
+      <div>
+        General Feed
+      </div>
+      <div *ngFor="let post of posts">
+        <app-forum-post [forumPost]="post"></app-forum-post>
+        <br/>
+      </div>
+    </div>
+      <div class="post-list">
+        <div>
+          Following Feed
+        </div>
+        <div *ngFor="let post of followedPosts">
+          <app-forum-post [forumPost]="post"></app-forum-post>
+          <br/>
+        </div>
+    </div>
+  </div>
+</div>
+
+

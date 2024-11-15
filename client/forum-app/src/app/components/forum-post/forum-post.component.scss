@@ -1,0 +1,54 @@
+.post{
+  display: flex;
+  flex-direction: column;
+
+  padding: 12px;
+
+
+  border: burlywood solid 2px;
+  border-radius: 2px;
+  background-color: beige;
+
+  .post-header{
+    display: flex;
+    justify-content: flex-end;
+
+
+    div{
+      padding-left: 5px;
+      padding-right: 5px;
+      &:first-of-type{
+      margin-right: auto;
+      }
+    }
+  }
+  .post-body{
+    //min-height: 500px;
+
+  }
+  .post-footer{
+    display: flex;
+
+    .footer-content {
+      margin: auto;
+    }
+  }
+}
+
+.profile{
+
+  display: flex;
+  flex-flow: row;
+
+  img{
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+  }
+
+  &>div{
+    display: flex;
+    flex-flow: column;
+  }
+
+}

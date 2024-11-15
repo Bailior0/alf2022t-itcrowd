@@ -1,0 +1,16 @@
+.header{
+  font-size: 32px;
+
+  display: flex;
+  flex-flow: row;
+  align-items: flex-end;
+
+  img{
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+  }
+}
+.post-list{
+  margin: 0 auto auto;
+}

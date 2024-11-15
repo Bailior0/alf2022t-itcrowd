@@ -1,0 +1,14 @@
+<div class="post-creation">
+  <mat-form-field class="form-field" appearance="fill">
+    <mat-label>title</mat-label>
+    <input matInput type="text" [(ngModel)]="title">
+
+  </mat-form-field>
+  <mat-form-field class="form-field" appearance="fill">
+    <mat-label>body</mat-label>
+    <textarea style="width: 300px" matInput  type="text"  rows="15"  [(ngModel)]="body"></textarea>
+
+    <button mat-button (click)="post()"> Post</button>
+
+  </mat-form-field>
+</div>

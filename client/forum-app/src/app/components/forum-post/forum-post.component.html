@@ -1,0 +1,58 @@
+<div class="post">
+  <div class="post-header">
+    <div class="profile">
+      <img src="https://i.pravatar.cc/150?u={{user?.id}}">
+      <div>
+        <div>
+          <div class="profile__name">{{user?.username ?? "" }}</div>
+            <div>
+              <button *ngIf="followed" mat-button (click)="unFollow()"> Followed</button>
+              <button *ngIf="!followed" mat-button (click)="follow()"> Not Followed</button>
+          </div>
+        </div>
+        <div class="profile__date">{{forumPost?.createDate}}</div>
+      </div>
+    </div>
+    <div> </div>
+
+
+    <div></div>
+  </div>
+  <div class="post-body">
+    <h3> {{forumPost?.title}}</h3>
+    <p *ngIf="!editContent">{{forumPost?.content}}</p>
+    <mat-form-field   *ngIf="editContent" class="form-field" appearance="fill">
+      <mat-label>body</mat-label>
+      <textarea style="width: 300px" matInput  type="text"  rows="15"  [(ngModel)]="newContent"></textarea>
+      <button mat-button (click)="saveEdit()"> Save</button>
+      <button mat-button (click)="cancelEdit()"> Cancel</button>
+
+    </mat-form-field>
+  </div>
+  <div class="post-footer">
+    <div class="footer-content">
+      <div *ngIf="this.forumPost"> {{this.forumPost.voteCount}}</div>
+      <button mat-button (click)="vote(1)"> Upvote</button>
+      <button mat-button (click)="vote(-1)"> Downvote</button>
+      <button mat-button (click)="giveComment()"> Comment</button>
+      <button *ngIf="comments.length != 0" mat-button (click)="toggleComments()"> {{(!showComments) ? showCommentsText : hideCommentsText}}</button>
+    </div>
+    <div  class="footer-content">
+      <button *ngIf="showEdit" mat-button (click)="edit()"> Edit</button>
+      <button *ngIf="showDelete" mat-button (click)="delete()"> Delete</button>
+    </div>
+  </div>
+  <div *ngIf="showCommentField"> <mat-form-field class="form-field" appearance="fill">
+    <mat-label>comment</mat-label>
+    <textarea style="width: 300px" matInput  type="text"  rows="15"  [(ngModel)]="newcomment"></textarea>
+
+    <button mat-button (click)="postComment()"> Post</button>
+
+  </mat-form-field>
+  </div>
+  <div *ngIf="showComments" class="post-comments">
+    <div *ngFor="let post of comments">
+      <app-forum-post [forumPost]="post"></app-forum-post>
+    </div>
+  </div>
+</div>
