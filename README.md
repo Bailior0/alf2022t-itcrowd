@@ -2,10 +2,10 @@
 
 Csapatnév: ITcrowd
 
-Csapattagok Neptun kóddal:
-- Dömötör Péter (G2Y5TI)
-- Varga Tamás (BFLOHU)
-- Gyulai Gergő László (JJY2VO)
+Csapattagok:
+- Dömötör Péter
+- Varga Tamás
+- Gyulai Gergő László
 
 Bemutató videó URL: https://www.youtube.com/watch?v=cABCCNZIJZg
 
